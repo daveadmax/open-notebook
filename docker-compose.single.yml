@@ -4,8 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.single
-    expose:
-      - "8502"
+    ports:
+      - "8502:8502"  # React frontend
+      - "5055:5055"  # REST API
     env_file:
       - ./docker.env
     volumes:
